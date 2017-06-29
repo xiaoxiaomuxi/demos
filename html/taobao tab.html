@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>taobao demo</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+    @font-face {
+        font-family: iconfont;
+        src: url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.eot);
+        src: url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.eot?#iefix) format("embedded-opentype"), url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.woff) format("woff"), url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.tff) format("truetype"), url(http://g.tbcdn.cn/tb/icon-font/1.1.5/iconfont.svg#uxiconfont) format("svg");
+    }
+    
+    body,
+    div,
+    a,
+    button,
+    input,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul,
+    li {
+        list-style: none;
+    }
+    
+    body {
+        font: 12px/1.5 tahoma, arial, sans-serif;
+    }
+    
+    .search-container {
+        margin: 0 20px;
+        position: relative;
+    }
+    
+    .search-common-panel {
+        height: 39px;
+        background-color: #f50;
+        overflow: hidden;
+        padding: 3px 0 3px 77px;
+    }
+    
+    .search-common-panel input {
+        height: 39px;
+        line-height: 39px;
+        width: 100%;
+        border: 0 none;
+        outline: 0;
+        background-color: #fff;
+    }
+    
+    .search-common-panel .iconfont {
+        font-family: iconfont;
+        font-size: 12px;
+        font-style: normal;
+        color: #ccc;
+        position: absolute;
+        top: 14px;
+        left: 86px;
+        z-index: 2;
+    }
+    
+    .search-list {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 72px;
+        height: 39px;
+        overflow: hidden;
+        background-color: #fff;
+        border-left: 1px solid #f6f6f6;
+        border-right: 1px solid #e5e5e5;
+    }
+    
+    .search-list li {
+        height: 39px;
+        line-height: 39px;
+        text-align: center;
+        color: #6c6c6c;
+        cursor: pointer;
+    }
+    
+    .search-list .selected {
+        background-color: #f6f6f6;
+    }
+    
+    .search-tips {
+        float: right;
+        padding: 3px 0 0 15px;
+    }
+    
+    .search-tips a {
+        color: #6c6c6c;
+    }
+    
+    .btn-search {
+        float: right;
+        background: url("http://gtms01.alicdn.com/tps/i1/T1qyj8Fc8aXXc4E9bI-400-300.png");
+        background-position: 0 -200px;
+        width: 100px;
+        height: 45px;
+        border: 0;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <ul id="search-tab" class="search-list">
+            <li class="selected">
+                宝贝</li>
+            <li>
+                店铺</li>
+        </ul>
+        <div class="search-pannel">
+            <form action="#">
+                <div class="search-tips">
+                    <a href="#">
+					高级<br>搜索
+				</a>
+                </div>
+                <button class="btn-search" type="submit"></button>
+                <div class="search-common-panel">
+                    <input type="text" name="">
+                    <i class="iconfont">ő</i>
+                </div>
+            </form>
+        </div>
+</body>
+<script type="text/javascript">
+var getdom = function(id) {
+    return document.getElementById(id);
+}
+var oul = getdom('search-tab');
+var oli = oul.getElementsByTagName('li');
+oul.onmouseover = function() {
+    this.style.height = 'auto';
+}
+for (var i = 0; i < oli.length; i++) {
+    oli[i].onmouseover = function(e) {
+        if (this.className.indexOf("selected") == -1)
+            this.className += 'selected';
+    }
+    oli[i].onmouseout = function() {
+        this.className = '';
+    }
+    oli[i].onclick = function() {
+        var a = this.innerHTML;
+        this.innerHTML = oli[0].innerHTML;
+        oli[0].innerHTML = a;
+        oul.style.height = '39px';
+        oli[0].className = "selected";
+    }
+}
+</script>
+
+</html>

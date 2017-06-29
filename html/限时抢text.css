@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* CSS Document */
+div,img{
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+
+.content3{
+  background:url(http://img.mukewang.com/534d13940001063d12000398.jpg) no-repeat;
+  width:1200px;
+  height:398px;
+  margin:0 auto;
+  position:relative;
+}
+.time{
+  position:absolute;
+  top:122px;
+  left:46%;
+  line-height:22px;
+  font-size:14px;
+}
