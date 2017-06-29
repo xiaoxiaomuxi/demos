@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>tab</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #323232;
+    font-size: 12px;
+    padding: 100px;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.tab {
+    width: 300px;
+}
+
+.tab .tab-nav {
+    height: 30px;
+}
+
+.tab .tab-nav li {
+    float: left;
+    margin-right: 5px;
+    background-color: #767676;
+    border-radius: 3px 3px 0 0;
+}
+
+.tab .tab-nav li a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab .tab-nav li.actived {
+    background-color: #fff;
+}
+
+.tab .tab-nav li.actived a {
+    color: #777;
+}
+
+.tab .content-wrap {
+    background-color: #fff;
+    padding: 5px;
+    height: 200px;
+}
+
+.tab .content-wrap img {
+    height: 200px;
+    width: 290px;
+}
+
+.tab .content-wrap .content-item {
+	position:absolute;
+    display: none;
+}
+
+.tab .content-wrap .current {
+    display: block;
+}
+</style>
+<script type="text/javascript" src="../../bootstrap/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/images_tab.js"></script>
+
+<body>
+    <div class="js-tab tab">
+        <ul class="tab-nav">
+            <li class="actived">
+                <a href="javascript:void(0)">新闻</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">娱乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">电影</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">音乐</a>
+            </li>
+        </ul>
+        <div class="content-wrap">
+            <div class="content-item current"><img src="../1.jpg" alt=""></div>
+            <div class="content-item"><img src="../2.jpg" alt=""></div>
+            <div class="content-item"><img src="../3.jpg" alt=""></div>
+            <div class="content-item"><img src="../4.jpg" alt=""></div>
+        </div>
+    </div>
+     <div class="js-tab tab">
+        <ul class="tab-nav">
+            <li class="actived">
+                <a href="javascript:void(0)">新闻</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">娱乐</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">电影</a>
+            </li>
+            <li>
+                <a href="javascript:void(0)">音乐</a>
+            </li>
+        </ul>
+        <div class="content-wrap">
+            <div class="content-item current"><img src="../1.jpg" alt=""></div>
+            <div class="content-item"><img src="../2.jpg" alt=""></div>
+            <div class="content-item"><img src="../3.jpg" alt=""></div>
+            <div class="content-item"><img src="../4.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+   
+    $(function(){
+    	$(".js-tab").eq(0).tab(
+        {
+    		"triggerType":"click", 
+        	"effect":"fade",
+        	"invoke":3,
+        	"auto":5000
+       },
+       {
+        "items":"ul.tab-nav li",
+        "conItems":"div.content-item",
+        "actived":"actived",
+        "current":"current"
+       }
+       );
+        $(".js-tab").eq(1).tab(
+        {
+            "triggerType":"click", 
+            "effect":"fde",
+            "invoke":2,
+            "auto":5000
+       },
+       {
+        "items":"ul.tab-nav li",
+        "conItems":"div.content-item",
+        "actived":"actived",
+        "current":"current"
+       }
+       );
+    });
+   
+   /* $(function(){
+    Tab.init($(".js-tab"));
+    });*/
+    </script>
+</body>
+
+</html>
